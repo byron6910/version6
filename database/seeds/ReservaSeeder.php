@@ -26,14 +26,13 @@ class ReservaSeeder extends Seeder
         $cantidad1=User::all()->count();
 
         $cantidad2=Viaje::all()->count();
-        $cantidad3=Cooperativa::all()->count();
+     
         
         
      
         for($k=0;$k<$cantidad1;$k++){
                 
                 for($j=0;$j<$cantidad2;$j++){
-                      for($i=0;$i<$cantidad3;$j++){
 
             Reserva::create([
 
@@ -46,14 +45,14 @@ class ReservaSeeder extends Seeder
 
               
                 'id'=>$faker->numberBetween(1,$cantidad1),
-                'id_viaje'=>$faker->numberBetween(1,$cantidad2),
-                'id_cooperativa'=>$faker->numberBetween(1,$cantidad3),
+                'id_viaje'=>$faker->numberBetween(1,$cantidad2)
+               
 
 
             ]);
     
         }
-    }
+    
         
         }
     }

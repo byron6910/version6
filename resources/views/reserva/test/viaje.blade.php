@@ -54,6 +54,22 @@
                         </div>
 
 
+   						<div class="col-sm-12">
+                        <label for="id_cooperativa">Cooperativa:</label>
+
+
+
+                                <select name="id_cooperativa" id="id_cooperativa" class="form-control selectpicker" data-live-search="true">
+                                	@foreach($cooperativas as $cooperativa)
+                                	<option value="{{$cooperativa->id_cooperativa}}"> {{$cooperativa->nombre}}
+                                		
+                                	</option>
+                                	@endforeach
+
+                                </select>
+                        </div>
+
+
 
 				</div>
 			</div>

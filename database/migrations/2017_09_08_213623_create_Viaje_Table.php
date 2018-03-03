@@ -23,6 +23,11 @@ class CreateViajeTable extends Migration
             $table->foreign('id_origen_destino')->references('id_origen_destino')->on('origen_destino')
             ->onDelete('cascade');
 
+
+            $table->integer('id_cooperativa')->length(10)->unsigned();
+            $table->foreign('id_cooperativa')->references('id_cooperativa')->on('cooperativa')
+            ->onDelete('cascade');
+
        
             
             $table->timestamps();

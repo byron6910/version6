@@ -9,7 +9,7 @@ class Viaje extends Model
 {
     protected $table='viaje';
     protected $primaryKey='id_viaje';
-    protected $fillable=['estado','fecha_horario','hora','id_origen_destino'];
+    protected $fillable=['estado','fecha_horario','hora','id_origen_destino','id_cooperativa'];
     protected $hidden=['created_at','updated_at'];
     
 
@@ -23,6 +23,10 @@ class Viaje extends Model
 
     public function reservas(){
         return $this->hasMany('App\Reserva','id_reserva');
+    }
+
+     public function cooperativa(){
+        return  $this->belongsTo('App\Cooperativa','id_cooperativa');
     }
 
 

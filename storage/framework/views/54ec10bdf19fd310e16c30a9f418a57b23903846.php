@@ -55,6 +55,23 @@
                         </div>
 
 
+   						<div class="col-sm-12">
+                        <label for="id_cooperativa">Cooperativa:</label>
+
+
+
+                                <select name="id_cooperativa" id="id_cooperativa" class="form-control selectpicker" data-live-search="true">
+                                	<?php $__currentLoopData = $cooperativas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cooperativa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                	<option value="<?php echo e($cooperativa->id_cooperativa); ?>"> <?php echo e($cooperativa->nombre); ?>
+
+                                		
+                                	</option>
+                                	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                                </select>
+                        </div>
+
+
 
 				</div>
 			</div>

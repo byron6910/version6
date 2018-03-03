@@ -31,9 +31,7 @@ class CreateReservaTable extends Migration
              $table->foreign('id_viaje')->references('id_viaje')->on('viaje')
              ->onDelete('cascade');
 
-                 $table->integer('id_cooperativa')->length(10)->unsigned();
-            $table->foreign('id_cooperativa')->references('id_cooperativa')->on('cooperativa')
-            ->onDelete('cascade');
+      
 
             
 

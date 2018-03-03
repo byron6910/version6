@@ -9,7 +9,7 @@ class Reserva extends Model
 {
     protected $table='reserva';
     protected $primaryKey='id_reserva';
-    protected $fillable=['fecha_reserva','estado','hora_reserva','id'];
+    protected $fillable=['fecha_reserva','estado','hora_reserva','id','id_viaje','cantidad','asiento'];
     protected $hidden=['created_at','updated_at'];
     
 
@@ -19,9 +19,7 @@ class Reserva extends Model
         return  $this->belongsTo('App\User','id');
     }
 
-     public function cooperativa(){
-        return  $this->belongsTo('App\Cooperativa','id_cooperativa');
-    }
+    
 
     public function viaje(){
         return  $this->belongsTo('App\Viaje','id_viaje');

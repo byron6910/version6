@@ -50,6 +50,25 @@ Route::post('/reserva/insert/user',['as'=>'postInsertUser','uses'=>'ReservaContr
 Route::post('/reserva/insert/viaje',['as'=>'postInsertViaje','uses'=>'ReservaController@postInsertViaje']);
 
 Route::post('/reserva/insert/cooperativa',['as'=>'postInsertCooperativa','uses'=>'ReservaController@postInsertCooperativa']);
+Route::post('/reserva/insert/origen',['as'=>'postInsertOrigenDestino','uses'=>'ReservaController@postInsertOrigenDestino']);
+Route::get('/reserva/insert/viaje/id',['as'=>'getShowViaje','uses'=>'ReservaController@getShowViaje']);
+
+
+Route::post('/reserva/insert/bus',['as'=>'postInsertBus','uses'=>'ReservaController@postInsertBus']);
+Route::post('/reserva/insert/reserva',['as'=>'createReserva','uses'=>'ReservaController@createReserva']);
+
+
+Route::get('/reserva/insert/reserva-information',['as'=>'showReservaInformation','uses'=>'ReservaController@showReservaInformation']);
+Route::get('/reserva/insert/reserva-info',['as'=>'ReservaInformation','uses'=>'ReservaController@ReservaInformation']);
+
+Route::post('/reserva/eliminar/reserva',['as'=>'deleteReserva','uses'=>'ReservaController@deleteReserva']);
+Route::get('/reserva/reserva-edit',['as'=>'editReserva','uses'=>'ReservaController@editReserva']);
+
+Route::post('/reserva/update/reserva',['as'=>'updateReservaInfo','uses'=>'ReservaController@updateReservaInfo']);
+
+
+
+
 //Route::post('/viaje/insert/horario',['as'=>'postInsertHorario','uses'=>'ViajeController@postInsertHorario']);
 
 

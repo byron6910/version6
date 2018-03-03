@@ -22,12 +22,12 @@ class ViajeSeeder extends Seeder
     {
         $faker=Faker::create();
         $cantidad=Origen_Destino::all()->count();
-       // $cantidad1=Cooperativa::all()->count();
+        $cantidad1=Cooperativa::all()->count();
         
 
         for($i=0;$i<$cantidad;$i++){
 
-          //  for($j=0;$j<$cantidad1;$j++){
+            for($j=0;$j<$cantidad1;$j++){
 
             Viaje::create([
 // para relacionar dejar que sea autoincrementalble
@@ -41,11 +41,11 @@ class ViajeSeeder extends Seeder
                 
                
 
-            //    'id_cooperativa'=>$faker->numberBetween(1,$cantidad1)
+               'id_cooperativa'=>$faker->numberBetween(1,$cantidad1)
                 
 
             ]);
-   // }
+    }
     }
 }
 }

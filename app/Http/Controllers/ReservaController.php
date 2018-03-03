@@ -12,6 +12,8 @@ use App\User;
 use App\Viaje;
 use App\Cooperativa;
 use App\Origen_Destino;
+use App\Bus;
+
 
 
 class ReservaController extends Controller
@@ -57,8 +59,82 @@ class ReservaController extends Controller
         {
             return response(Cooperativa::create($request->all()));
         }
+     }
+        public function postInsertOrigenDestino(Request $request){
+        if($request->ajax())
+        {
+            return response(Origen_Destino::create($request->all()));
+        }
+
     }
 
+       public function postInsertBus(Request $request){
+        if($request->ajax())
+        {
+            return response(Bus::create($request->all()));
+        }
+
+    }
+    
+      public function getShowViaje(Request $request){
+        if($request->ajax())
+        {
+          //  return response(Viaje::findOrFail($request->id_origen_destino)); solo trae uno y necesito todas
+           return response(Viaje::where('id_origen_destino',$request->id_origen_destino)->get());
+        
+        }
+
+        
+    }
+
+    public function createReserva(Request $request){
+        if($request->ajax()){
+            return response(Reserva::create($request->all()));
+        }
+    
+    }
+
+    public function showReservaInformation(Request $request){
+
+        $reservas=Reserva::all();
+
+        return view('reserva.test.infoReserva',['reservas'=>$reservas]);
+        
+    }
+
+    public function ReservaInformation(){
+        return Reserva::orderBy('id_reserva','desc');
+
+        
+    }
+
+     public function deleteReserva(Request $request){
+         if($request->ajax()){
+            Reserva::destroy($request->id_reserva);
+        }
+
+        
+    }
+
+     public function editReserva(Request $request){
+        if($request->ajax()){
+            return response(Reserva::find($request->id_reserva));
+        }
+    
+    }
+
+     public function updateReservaInfo(Request $request){
+        if($request->ajax()){
+            return response(Reserva::updateOrCreate(['id_reserva'=>$request->id_reserva],$request->all()));
+        }
+    
+    }
+
+    //  public function ReservaInformation(){
+    //     return Reserva::all();
+
+        
+    // }
 
    
 
